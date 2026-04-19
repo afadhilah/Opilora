@@ -1,0 +1,40 @@
+/* Dark theme */
+.dark {
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --bg-card: #0f172a;
+  --bg-sidebar: #020617;
+  --bg-sidebar-hover: #0f172a;
+  --bg-sidebar-active: rgba(59, 107, 250, 0.15);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --text-quaternary: #475569;
+  --text-sidebar: #64748b;
+  --text-sidebar-active: #f1f5f9;
+
+  --border-primary: #1e293b;
+  --border-secondary: #334155;
+  --border-focus: #3b6bfa;
+
+  --color-brand: #5990ff;
+  --color-brand-hover: #3b6bfa;
+  --color-brand-muted: rgba(89, 144, 255, 0.1);
+  --color-brand-light: rgba(89, 144, 255, 0.08);
+
+  --color-positive: #34d399;
+  --color-positive-bg: rgba(52, 211, 153, 0.1);
+  --color-negative: #f87171;
+  --color-negative-bg: rgba(248, 113, 113, 0.1);
+  --color-warning: #fbbf24;
+  --color-warning-bg: rgba(251, 191, 36, 0.1);
+  --color-info: #60a5fa;
+  --color-info-bg: rgba(96, 165, 250, 0.1);
+
+  --shadow-soft: 0 1px 2px 0 rgb(0 0 0 / 0.15);
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.2);
+  --shadow-elevated: 0 4px 16px 0 rgb(0 0 0 / 0.3);
+  --shadow-dropdown: 0 8px 24px 0 rgb(0 0 0 / 0.4);
+}

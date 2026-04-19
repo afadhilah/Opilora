@@ -1,0 +1,40 @@
+/* Light theme (default) */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-sidebar: #0f172a;
+  --bg-sidebar-hover: #1e293b;
+  --bg-sidebar-active: rgba(59, 107, 250, 0.12);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --text-quaternary: #cbd5e1;
+  --text-sidebar: #94a3b8;
+  --text-sidebar-active: #ffffff;
+
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --border-focus: #3b6bfa;
+
+  --color-brand: #3b6bfa;
+  --color-brand-hover: #1e45ef;
+  --color-brand-muted: rgba(59, 107, 250, 0.08);
+  --color-brand-light: #eef4ff;
+
+  --color-positive: #10b981;
+  --color-positive-bg: #ecfdf5;
+  --color-negative: #ef4444;
+  --color-negative-bg: #fef2f2;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fffbeb;
+  --color-info: #3b82f6;
+  --color-info-bg: #eff6ff;
+
+  --shadow-soft: 0 1px 2px 0 rgb(0 0 0 / 0.03), 0 1px 3px 0 rgb(0 0 0 / 0.04);
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 2px 8px 0 rgb(0 0 0 / 0.03);
+  --shadow-elevated: 0 4px 16px 0 rgb(0 0 0 / 0.06), 0 1px 4px 0 rgb(0 0 0 / 0.04);
+  --shadow-dropdown: 0 8px 24px 0 rgb(0 0 0 / 0.08), 0 2px 8px 0 rgb(0 0 0 / 0.04);
+}
