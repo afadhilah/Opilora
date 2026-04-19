@@ -25,6 +25,8 @@ export function TrendLine({ data, lines, height = 260, xDataKey = 'time' }: Tren
             fontSize: '12px',
             color: '#f1f5f9',
           }}
+          itemStyle={{ color: '#f1f5f9' }}
+          labelStyle={{ color: '#94a3b8', marginBottom: '4px' }}
         />
         {lines.length > 1 && (
           <Legend

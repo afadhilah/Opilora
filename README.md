@@ -1,0 +1,48 @@
+# Opilora
+
+Analisis dan Simulasi Opini Publik Menggunakan Sentiment Analysis dan Multi-Agent untuk Mengidentifikasi Eskalasi Isu Digital.
+
+## Quick Start
+
+### Prerequisites
+- Python 3.11+
+- Node.js 20+
+- Docker Desktop
+
+### 1. Start Infrastructure
+```bash
+docker-compose up -d
+```
+
+### 2. Backend
+```bash
+cd backend
+pip install -r requirements.txt
+python -m app.utils.seed_data   # seed mock data
+uvicorn app.main:app --reload --port 8000
+```
+API docs: http://localhost:8000/docs
+
+### 3. Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Dashboard: http://localhost:3000
+
+## Project Structure
+```
+opilora/
+├── frontend/          # React Dashboard (Vite + TypeScript)
+├── backend/           # Python FastAPI
+├── docker-compose.yml # PostgreSQL + Redis
+├── Makefile           # Common commands
+└── Roadmap.md         # Development roadmap
+```
+
+## Tech Stack
+- **Frontend**: React 19, TypeScript, TailwindCSS, Recharts, Zustand
+- **Backend**: Python FastAPI, SQLAlchemy (async), Pydantic
+- **Database**: PostgreSQL 16, Redis 7
+- **LLM**: Self-hosted, OpenAI-compatible format

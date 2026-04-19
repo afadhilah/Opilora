@@ -1,0 +1,17 @@
+[project]
+name = "opilora-backend"
+version = "0.1.0"
+description = "Opilora — Backend API untuk Analisis Opini Publik"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]

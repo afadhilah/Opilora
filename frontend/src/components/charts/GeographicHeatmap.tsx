@@ -30,6 +30,8 @@ export function GeographicHeatmap({ data, height = 300 }: HorizontalBarChartProp
             fontSize: '12px',
             color: '#f1f5f9',
           }}
+          itemStyle={{ color: '#f1f5f9' }}
+          labelStyle={{ color: '#94a3b8', marginBottom: '4px' }}
         />
         <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={20}>
           {data.map((entry, index) => (

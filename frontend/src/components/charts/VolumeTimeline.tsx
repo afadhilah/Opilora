@@ -36,6 +36,7 @@ export function VolumeTimeline({ data, height = 260, showGrid = true }: VolumeTi
             boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
           }}
           itemStyle={{ color: '#f1f5f9' }}
+          labelStyle={{ color: '#94a3b8', marginBottom: '4px' }}
           cursor={{ stroke: '#cbd5e1', strokeDasharray: '4 4' }}
         />
         <defs>

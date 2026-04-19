@@ -19,7 +19,7 @@ export function MultiTopicComparison() {
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
           <XAxis dataKey="topic" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} />
           <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#94a3b8' }} />
-          <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px', padding: '8px 12px', fontSize: '12px', color: '#f1f5f9' }} />
+          <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px', padding: '8px 12px', fontSize: '12px', color: '#f1f5f9' }} itemStyle={{ color: '#f1f5f9' }} labelStyle={{ color: '#94a3b8', marginBottom: '4px' }} />
           <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: '12px', paddingTop: '12px' }} />
           <Bar dataKey="positive" name="Positif" fill="#10b981" stackId="a" radius={[0, 0, 0, 0]} />
           <Bar dataKey="neutral" name="Netral" fill="#94a3b8" stackId="a" />

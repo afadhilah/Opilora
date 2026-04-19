@@ -36,6 +36,8 @@ export function SentimentDonut({ data, centerLabel, centerValue, height = 220 }:
               fontSize: '12px',
               color: '#f1f5f9',
             }}
+            itemStyle={{ color: '#f1f5f9' }}
+            labelStyle={{ color: '#94a3b8', marginBottom: '4px' }}
             formatter={(value: number) => [`${value.toFixed(1)}%`, '']}
           />
         </PieChart>
