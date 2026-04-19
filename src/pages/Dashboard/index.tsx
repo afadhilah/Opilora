@@ -7,7 +7,7 @@ import { RecentAlerts } from './components/RecentAlerts';
 export default function Dashboard() {
   return (
     <MainLayout title="Dashboard" subtitle="Ringkasan opini publik real-time">
-      <div className="space-y-6 max-w-[1440px]">
+      <div className="space-y-6">
         <QuickStats />
         <RealTimeMonitoring />
         <RecentAlerts />

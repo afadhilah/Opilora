@@ -7,7 +7,7 @@ import { BenchmarkChart } from './components/BenchmarkChart';
 export default function ComparativeAnalysis() {
   return (
     <MainLayout title="Komparasi" subtitle="Bandingkan metrik antar topik dan kompetitor">
-      <div className="space-y-6 max-w-[1440px]">
+      <div className="space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2"><MultiTopicComparison /></div>
           <CompetitorAnalysis />

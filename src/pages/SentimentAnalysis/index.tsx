@@ -10,7 +10,7 @@ export default function SentimentAnalysis() {
   const emotions = useSentimentStore((s) => s.emotions);
   return (
     <MainLayout title="Sentimen" subtitle="Analisis sentimen mendalam dari opini publik">
-      <div className="space-y-6 max-w-[1440px]">
+      <div className="space-y-6">
         <SentimentOverview />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2">

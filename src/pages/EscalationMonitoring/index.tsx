@@ -8,7 +8,7 @@ import { FactorsBreakdown } from './components/FactorsBreakdown';
 export default function EscalationMonitoring() {
   return (
     <MainLayout title="Eskalasi" subtitle="Pantau dan prediksi potensi eskalasi isu digital">
-      <div className="space-y-6 max-w-[1440px]">
+      <div className="space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <RiskDashboard />
           <div className="lg:col-span-2"><PredictionGraph /></div>

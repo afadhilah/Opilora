@@ -7,7 +7,7 @@ import { ReachEstimation } from './components/ReachEstimation';
 export default function InfluencerAnalysis() {
   return (
     <MainLayout title="Influencer" subtitle="Analisis influencer dan jangkauan pengaruh">
-      <div className="space-y-6 max-w-[1440px]">
+      <div className="space-y-6">
         <ReachEstimation />
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
           <div className="lg:col-span-3"><TopInfluencers /></div>
