@@ -1,6 +1,6 @@
 import uuid
 from datetime import datetime
-from sqlalchemy import String, Text, DateTime, Integer, Float, ForeignKey, Index
+from sqlalchemy import String, Text, DateTime, Integer, Float, ForeignKey, Index, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID, JSONB, ARRAY
 from app.models.base import Base, UUIDMixin, TimestampMixin
@@ -22,6 +22,10 @@ class Mention(Base, UUIDMixin, TimestampMixin):
     likes: Mapped[int] = mapped_column(Integer, default=0)
     shares: Mapped[int] = mapped_column(Integer, default=0)
     comments: Mapped[int] = mapped_column(Integer, default=0)
+
+    # Collection tracking
+    content_hash: Mapped[str | None] = mapped_column(String(64), unique=True, index=True)
+    collection_source: Mapped[str | None] = mapped_column(String(100))  # "rss_news", "twitter_mock", "manual_upload"
 
     # Raw data from API/scraper
     raw_data: Mapped[dict | None] = mapped_column(JSONB)
