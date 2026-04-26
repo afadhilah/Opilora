@@ -18,7 +18,7 @@ SENTIMENT_LABELS = {0: "positive", 1: "neutral", 2: "negative"}
 
 # Emotion model (Indonesian RoBERTa emotion)
 EMOTION_MODEL_NAME = "StevenLimcorn/indonesian-roberta-base-emotion-classifier"
-EMOTION_LABELS = {0: "sadness", 1: "joy", 2: "love", 3: "anger", 4: "fear", 5: "surprise"}
+EMOTION_LABELS = None  # Auto-detected from model.config.id2label at load time
 
 # Confidence thresholds
 SENTIMENT_CONFIDENCE_THRESHOLD = 0.4

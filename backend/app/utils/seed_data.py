@@ -173,7 +173,7 @@ async def seed():
             db.add(escalation)
 
         await db.commit()
-        print(f"✓ Seeded: 1 user, {len(topics)} topics, {len(influencers)} influencers, 100 mentions, 5 escalations")
+        print(f"[OK] Seeded: 1 user, {len(topics)} topics, {len(influencers)} influencers, 100 mentions, 5 escalations")
 
 
 if __name__ == "__main__":

@@ -18,6 +18,7 @@ class EmotionModel:
     def __init__(self):
         self._model = None
         self._tokenizer = None
+        self._labels: dict[int, str] = {}
         self._loaded = False
 
     def _load(self):
@@ -33,14 +34,24 @@ class EmotionModel:
         self._model = AutoModelForSequenceClassification.from_pretrained(EMOTION_MODEL_NAME)
         self._model.to(DEVICE)
         self._model.eval()
+
+        # Auto-detect labels from model config
+        id2label = getattr(self._model.config, "id2label", None)
+        if id2label:
+            self._labels = {int(k): v.lower() for k, v in id2label.items()}
+        else:
+            num = self._model.config.num_labels
+            fallback = ["sadness", "joy", "love", "anger", "fear"]
+            self._labels = {i: fallback[i] if i < len(fallback) else f"emotion_{i}" for i in range(num)}
+
         self._loaded = True
-        logger.info("Emotion model loaded.")
+        logger.info(f"Emotion model loaded. Labels: {self._labels}")
 
     def predict(self, text: str) -> EmotionResult:
         self._load()
 
         import torch
-        from app.ml.config import DEVICE, EMOTION_LABELS, MAX_TEXT_LENGTH, EMOTION_CONFIDENCE_THRESHOLD
+        from app.ml.config import DEVICE, MAX_TEXT_LENGTH, EMOTION_CONFIDENCE_THRESHOLD
 
         inputs = self._tokenizer(
             text, return_tensors="pt", truncation=True,
@@ -52,9 +63,9 @@ class EmotionModel:
             outputs = self._model(**inputs)
             probs = torch.softmax(outputs.logits, dim=-1)[0]
 
-        scores = {EMOTION_LABELS[i]: float(probs[i]) for i in range(len(EMOTION_LABELS))}
+        scores = {self._labels[i]: float(probs[i]) for i in range(len(self._labels))}
         top_idx = int(torch.argmax(probs))
-        emotion = EMOTION_LABELS[top_idx]
+        emotion = self._labels[top_idx]
         score = float(probs[top_idx])
 
         # If confidence too low, return neutral-ish
@@ -68,7 +79,7 @@ class EmotionModel:
         self._load()
 
         import torch
-        from app.ml.config import DEVICE, EMOTION_LABELS, MAX_TEXT_LENGTH, EMOTION_CONFIDENCE_THRESHOLD
+        from app.ml.config import DEVICE, MAX_TEXT_LENGTH, EMOTION_CONFIDENCE_THRESHOLD
 
         inputs = self._tokenizer(
             texts, return_tensors="pt", truncation=True,
@@ -82,9 +93,9 @@ class EmotionModel:
 
         results = []
         for probs in all_probs:
-            scores = {EMOTION_LABELS[i]: float(probs[i]) for i in range(len(EMOTION_LABELS))}
+            scores = {self._labels[i]: float(probs[i]) for i in range(len(self._labels))}
             top_idx = int(torch.argmax(probs))
-            emotion = EMOTION_LABELS[top_idx]
+            emotion = self._labels[top_idx]
             score = float(probs[top_idx])
             if score < EMOTION_CONFIDENCE_THRESHOLD:
                 emotion = "neutral"
